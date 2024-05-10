@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{%load static%}
+{%block css_files%}
+    <link rel="stylesheet" href ="{%static "fill_the_gaps/quiz.css" %}">
+{%endblock%}
+
+{%block page_title%}
+fill the gaps
+
+{%endblock%}
+
+
+{% block content %}
+<h1>Choose your excercise</h1>
+
+<div class="left">
+    {%for category in categories   %}
+    
+    <ul>
+        <form action="{% url 'questions' question_no=0 %}" method="post">
+            {% csrf_token %}
+            
+            <button class="btn" type="submit" id="submit" name="submit" value={{category}}>{{category}}</button>
+        </form>
+    </ul>
+    
+    {%endfor%}
+</div>
+
+
+{% endblock %}

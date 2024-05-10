@@ -1,0 +1,55 @@
+{%extends "base.html"%}
+
+{% load static %}
+
+{%block css_files%}
+    <link rel="stylesheet" href ="{%static "fill_the_gaps/quiz.css" %}">
+{%endblock%}
+
+{% block page_title%} 
+	excercise!
+{% endblock%} 
+
+{% block content%}
+</head>
+  <body>
+    <header>
+      <h1>Füll die Lücken!</h1>
+      <p class="between">(Bears)</p>
+      
+      <button class="btn again" id="C">Start!</button>
+      <select name="" id="excerciseName">
+
+
+      </select>
+      
+      
+    </header>
+    <main>
+      <img class="questionPhoto" alt="">
+      
+      <div>
+        <!--img src="static\img\checkMark.png" style="float: right;" class="checkMark">  
+        <img src="static\img\wrongMark.png" style="float: right;" class="wrongMark"> -->
+        <div class="sentence"></div>
+      </div> 
+
+{% endblock%}       
+
+      
+
+     
+          
+          
+      
+    
+      
+      <button class="check" id="B">check!</button>
+    
+    </main>
+    
+    
+    <script src="static/script_Quiz.js"></script>
+    
+  </body>
+</html>
