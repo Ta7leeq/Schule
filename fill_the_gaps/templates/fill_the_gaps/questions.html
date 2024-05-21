@@ -12,7 +12,7 @@ fill the gaps
 
 {% block content %}
 <div class="sentence">
-    <form action="{% url 'questions' question_no %}" method="post">
+    <form action="{% url 'check_answer' category_name question_id %}" method="post">
         {% csrf_token %}
 
         {% for word in question.sentence.split %}

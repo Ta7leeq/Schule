@@ -1,0 +1,43 @@
+
+
+{% extends "base.html" %}
+{%load static%}
+{%block css_files%}
+    <!--link rel="stylesheet" href ="{%static "fill_the_gaps/quiz.css" %}"-->
+{%endblock%}
+
+{%block page_title%}
+Answer the question
+{%endblock%}
+
+{% block content %}
+
+
+    <h1>{{ exercise.name }}</h1>
+
+ 
+    <div class="container mt-5">
+        <div class="jumbotron">
+          <h1 class="display-4">{{ exercise.name }}</h1>
+          <p class="lead">{{ question.text }}</p>
+          <hr class="my-4">
+          <form action="{% url 'check_answer' exercise_id=exercise.id question_id=question.question_number %}" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+              <label for="answer">Your Answer:</label>
+              <input type="text" class="form-control" id="answer" name="answer">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit Answer</button>
+          </form>
+        </div>
+      </div>
+
+    <p>{{ question.text }}</p>
+    <form action="{% url 'check_answer' exercise_id=exercise.id question_id=question.question_number %}" method="post">
+        {% csrf_token %}
+        <label for="answer">Your Answer:</label>
+        <input type="text" id="answer" name="answer">
+        <button type="submit">Submit Answer</button>
+    </form>
+
+{%endblock%}

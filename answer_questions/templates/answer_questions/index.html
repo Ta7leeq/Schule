@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{%load static%}
+{%block css_files%}
+    <!--link rel="stylesheet" href ="{%static "fill_the_gaps/quiz.css" %}"-->
+{%endblock%}
+
+{%block page_title%}
+Answer the question
+
+{%endblock%}
+
+{% block content %}
+
+ 
+  
+    <ul>
+        {% for exercise in exercises %}
+            <li><a href="{% url 'exercise_detail' exercise_id=exercise.id question_id=1 %}">{{ exercise.name }}</a></li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

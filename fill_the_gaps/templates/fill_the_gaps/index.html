@@ -17,7 +17,7 @@ fill the gaps
     {%for category in categories   %}
     
     <ul>
-        <form action="{% url 'questions' question_no=0 %}" method="post">
+        <form action="{% url 'categories' category_name="English" %}" method="post">
             {% csrf_token %}
             
             <button class="btn" type="submit" id="submit" name="submit" value={{category}}>{{category}}</button>
