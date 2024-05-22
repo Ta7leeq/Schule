@@ -1,0 +1,55 @@
+.row{
+    background-color: #00CFFF;
+    
+
+}
+.custom-height {
+    height: 600px; /* Set the desired height */
+  }
+  
+.img-fluid{
+    height: 330px;
+    
+}
+.row__image01{
+    padding-left: 100px;
+    height: 500px;
+
+}
+
+.row__image03{
+    padding-right: 100px;
+
+}
+
+.row__image01,.row__image03, .row__image02{
+    padding-top: 100px;
+}
+
+.container-fluid_02{
+    background-color: #80ff00cb;
+}
+
+.paragraph_01{
+    padding-left: 20%;
+    padding-right: 20%;
+    
+    text-align: left;
+    
+}
+
+.container-fluid_03 {
+    background-color:  #22d412cb;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    
+    
+}
+.container-fluid_03 li {
+    padding: 10px 15px;
+    color: blue;
+    font-weight: bold;
+    display: inline-block;
+}

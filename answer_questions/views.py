@@ -10,6 +10,11 @@ def index(request):
     
     return render(request, 'answer_questions/index.html', {'exercises': exercises})
 
+
+def exercise_select(request):
+    exercises = Exercise.objects.all()
+    return render(request,'answer_questions/exercise_select.html', {'exercises': exercises})
+
 def exercise_detail(request, exercise_id, question_id):
     exercise = Exercise.objects.get(id=exercise_id)
     question = Question.objects.get(question_number=question_id,exercise_id=exercise_id)

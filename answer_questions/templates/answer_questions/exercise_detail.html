@@ -3,7 +3,7 @@
 {% extends "base.html" %}
 {%load static%}
 {%block css_files%}
-    <!--link rel="stylesheet" href ="{%static "fill_the_gaps/quiz.css" %}"-->
+    <link rel="stylesheet" href ="{%static "answer_questions/quiz.css" %}"-->
 {%endblock%}
 
 {%block page_title%}
@@ -12,32 +12,28 @@ Answer the question
 
 {% block content %}
 
+<div class="container-xxl mt-5">
+    
+    <h1 > {{ exercise.name }} </h1>
+    <h3> Finde die Akkusativobject</h3>
 
-    <h1>{{ exercise.name }}</h1>
+</div>
 
- 
-    <div class="container mt-5">
-        <div class="jumbotron">
-          <h1 class="display-4">{{ exercise.name }}</h1>
-          <p class="lead">{{ question.text }}</p>
-          <hr class="my-4">
-          <form action="{% url 'check_answer' exercise_id=exercise.id question_id=question.question_number %}" method="post">
-            {% csrf_token %}
-            <div class="form-group">
-              <label for="answer">Your Answer:</label>
-              <input type="text" class="form-control" id="answer" name="answer">
-            </div>
-            <button type="submit" class="btn btn-primary">Submit Answer</button>
-          </form>
-        </div>
-      </div>
-
-    <p>{{ question.text }}</p>
-    <form action="{% url 'check_answer' exercise_id=exercise.id question_id=question.question_number %}" method="post">
+<div class="container">
+    <div class="custom-jumbotron mt-5">
+      
+      <p class="lead fw-bold fs-4">{{ question.text }}</p>
+      <hr class="my-4">
+      <form action="{% url 'check_answer' exercise_id=exercise.id question_id=question.question_number %}" method="post">
         {% csrf_token %}
-        <label for="answer">Your Answer:</label>
-        <input type="text" id="answer" name="answer">
-        <button type="submit">Submit Answer</button>
-    </form>
+        <div class="form-group">
+          <label for="answer" class="form-label fs-4 fw-bold">Your Answer:</label>
+          <input type="text" class="form-control w-50 fw-bold fs-4" id="answer" name="answer">
+        </div>
+        <button type="submit" class="btn btn-candyland mt-3">Submit Answer</button>
+      </form>
+    </div>
+  </div>
+  
 
 {%endblock%}
