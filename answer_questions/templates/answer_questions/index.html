@@ -20,7 +20,7 @@ Answer the question
         </a>
       </div>
       <div class="col row__image02 ">
-        <a class="nav-link active" aria-current="page" href="{% url 'exercise_select'%}">
+        <a class="nav-link active" aria-current="page" href="{% url 'exercise_select' Fach="Alle"%}">
           <img src="{% static "answer_questions/images/image02.png" %}" class="img-fluid" alt="...">
         </a>
       </div>
@@ -54,10 +54,6 @@ Answer the question
     </p>
   </div>
   
-    <ul>
-        {% for exercise in exercises %}
-            <li><a href="{% url 'exercise_detail' exercise_id=exercise.id question_id=1 %}">{{ exercise.name }}</a></li>
-        {% endfor %}
-    </ul>
+   
 
 {% endblock %}

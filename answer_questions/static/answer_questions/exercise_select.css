@@ -1,0 +1,36 @@
+body {
+    background-color: #4d5ce29c;
+    color: #ffffff;
+  }
+  .filter-container {
+    background-color: #13185e;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 150px;
+    margin-bottom: 100px;
+  }
+  .filter-container .form-control, .filter-container .btn, .filter-container .form-select {
+    background-color: #828de9;
+    color: #270202;
+    border-color: #6c757d;
+  }
+  .filter-container .btn-primary {
+    background-color: #e65c00;
+    border-color: #e65c00;
+  }
+  .filter-container .btn-primary:hover {
+    background-color: #cc5200;
+    border-color: #cc5200;
+  }
+  .filter-container .btn-group .btn {
+    background-color: #1c1e22;
+    border-color: #6c757d;
+  }
+  .filter-container .btn-group .btn.active {
+    background-color: #b33900;
+    border-color: #b33900;
+  }
+  .filter-container .btn-group .btn:hover {
+    background-color: #343a40;
+    border-color: #6c757d;
+  }

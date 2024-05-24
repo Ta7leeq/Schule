@@ -11,9 +11,25 @@ def index(request):
     return render(request, 'answer_questions/index.html', {'exercises': exercises})
 
 
-def exercise_select(request):
+def exercise_select(request,Fach):
+    if request.method == 'POST':
+        user_fach=request.POST.get('select_fach')
+        return redirect('exercise_select', Fach=user_fach)
+        
     exercises = Exercise.objects.all()
-    return render(request,'answer_questions/exercise_select.html', {'exercises': exercises})
+    for exercise in exercises:
+        print(exercise.Fach)
+
+    if Fach=="Alle":
+        filterd_exercises=exercises
+    else:
+        filterd_exercises=Exercise.objects.filter(Fach=Fach)
+    
+        
+    return render(request,'answer_questions/exercise_select.html', {'exercises': filterd_exercises,
+                                                                     })
+
+
 
 def exercise_detail(request, exercise_id, question_id):
     exercise = Exercise.objects.get(id=exercise_id)
@@ -49,4 +65,3 @@ def check_answer(request, exercise_id, question_id):
             return redirect('exercise_detail', exercise_id=exercise_id, question_id=question.question_number)
             
 
-        

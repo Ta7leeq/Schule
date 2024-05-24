@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {%load static%}
 {%block css_files%}
-    <link rel="stylesheet" href ="{%static "answer_questions/index.css" %}">
+    <link rel="stylesheet" href ="{%static "answer_questions/exercise_select.css" %}">
 {%endblock%}
 
 {%block page_title%}
@@ -11,12 +11,89 @@ Answer the question
 
 {% block content %}
 
+<div class="container mt-5">
+  <div class="filter-container">
+    <form action="{% url 'exercise_select' Fach="Fach" %}" method="post">
+      {% csrf_token %}
+    <div class="row g-3">
+      <div class="col-md-2">
+        <label for="brand" class="form-label">Klasse</label>
+        <select id="brand" class="form-select">
+          <option selected>Alle</option>
+          <option>04</option>
+        </select>
+      </div>
+      <div class="col-md-2">
+        <label for="brand" class="form-label">Fach</label>
+        <select id="brand" class="form-select" name="select_fach">
+          {%for Fach in Facher%}
+          
+          {%endfor%}
+          <option selected>Alle</option>
+          <option>Deutch</option>
+          <option>Mathe</option>
+          <option>Test</option>
+          
 
+        </select>
+      </div>
+      <div class="col-md-2">
+        <label for="model" class="form-label">Thema</label>
+        <select id="model" class="form-select">
+          <option selected>Alle</option>
+          <option>Scriftliche Dividierung</option>
+        </select>
+      </div>
+      <div class="col-md-2">
+        <label for="year" class="form-label">Übungsart</label>
+        <select id="year" class="form-select">
+          <option selected>Alle</option>
+          <option>Frage_Antwort</option>
+        </select>
+      </div>
+      
+      <div class="col-md-2 d-flex align-items-end">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="onlinePurchase" value="option1">
+          <label class="form-check-label" for="onlinePurchase">neu!</label>
+        </div>
+      </div>
+      <div class="col-md-2 d-flex align-items-end">
+        
+      </div>
+      <div class="col-md-2 d-flex align-items-end">
+        <button type="button" class="btn btn-secondary w-100">Zurücksetzen</button>
+      </div>
+      
+      <div class="col-md-2 d-flex align-items-end">
+      
+        
+          <button type="submit" class="btn btn-primary w-100">Filter</button>
+        
+      
+      </div>
+    </div>
+    </form>
+  </div>
+</div>
 
-    <ul>
-        {% for exercise in exercises %}
-            <li><a href="{% url 'exercise_detail' exercise_id=exercise.id question_id=1 %}">{{ exercise.name }}</a></li>
-        {% endfor %}
-    </ul>
+<div class="container text-center">
+  
+  <div class="row row-cols-4 " >
+    {% for exercise in exercises %}
+      <div class="col row__image01 ">
+        <a class="nav-link active" aria-current="page" href="{% url 'exercise_detail' exercise_id=exercise.id question_id=1 %}">
+          <img src="{{ exercise.image.url }}" class="img-fluid" alt="...">
+          <li><a href="{% url 'exercise_detail' exercise_id=exercise.id question_id=1 %}">{{ exercise.name }}</a></li>
+          
+          
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+  
+
+    
 
 {% endblock %}
