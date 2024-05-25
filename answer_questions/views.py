@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 
 from django.shortcuts import render, redirect
-from .models import Exercise, Question
+from .models import Exercise, Question, Fach, Thema,Exercise_Type
 from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
 
 def index(request):
@@ -11,22 +11,52 @@ def index(request):
     return render(request, 'answer_questions/index.html', {'exercises': exercises})
 
 
-def exercise_select(request,Fach):
+def exercise_select(request,grade,Fach_Name,Thema_Name,Exercise_Type_Name):
     if request.method == 'POST':
-        user_fach=request.POST.get('select_fach')
-        return redirect('exercise_select', Fach=user_fach)
+        user_fach_Name=request.POST.get('select_fach')
+        user_Thema_Name=request.POST.get('select_thema')
+        user_Exercise_Type_Name=request.POST.get('select_exercise_type')
+    
+
+
+        return redirect('exercise_select',grade="Alle" ,Fach_Name=user_fach_Name,Thema_Name=user_Thema_Name,Exercise_Type_Name=user_Exercise_Type_Name)
         
     exercises = Exercise.objects.all()
-    for exercise in exercises:
-        print(exercise.Fach)
+    
+    Facher=list(Fach.objects.all())
+    Fach_Names = [fach.Name for fach in Facher]
+    
+    Themas=list(Thema.objects.all())
+    Thema_Names = [thema.Name for thema in Themas]
 
-    if Fach=="Alle":
+    Exercise_Types=list(Exercise_Type.objects.all())
+    Exercise_Types_Names = [exercise_type.Name for exercise_type in Exercise_Types]
+
+    print(Fach_Name,Thema_Name,Exercise_Type_Name)
+    
+    if Fach_Name=="Alle" and Thema_Name=="Alle" and Exercise_Type_Name=="Alle":
+        print("No Enter")
         filterd_exercises=exercises
     else:
-        filterd_exercises=Exercise.objects.filter(Fach=Fach)
-    
+        #user_fach_id=Fach.objects.filter(Name=Fach_Name).first().pk
+        #user_thema_id=Thema.objects.filter(Name=Thema_Name).first().pk
+        #user_exercise_type_id=Exercise_Type.objects.filter(Name=Exercise_Type_Name).first().pk
+
+        
+        #filterd_exercises=exercises
+        print(Fach_Name,Thema_Name,Exercise_Type_Name)
+        user_fach_id = Fach.objects.filter(Name=Fach_Name).first().pk if Fach_Name!="Alle" else 6
+        user_thema_id = Thema.objects.filter(Name=Thema_Name).first().pk if Thema_Name!="Alle" else 4
+        user_exercise_type_id = Exercise_Type.objects.filter(Name=Exercise_Type_Name).first().pk if Exercise_Type_Name!="Alle" else 3
+        
+        filterd_exercises=Exercise.objects.filter(Fach=user_fach_id,Thema=user_thema_id,Exercise_Type=user_exercise_type_id)
+
         
     return render(request,'answer_questions/exercise_select.html', {'exercises': filterd_exercises,
+                                                                    'Facher':Fach_Names,
+                                                                    'Themas':Thema_Names,
+                                                                    'Exercise_Types':Exercise_Types_Names,
+
                                                                      })
 
 

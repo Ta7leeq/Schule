@@ -34,3 +34,14 @@ body {
     background-color: #343a40;
     border-color: #6c757d;
   }
+
+  .img-fluid{
+    height: 200px;
+    
+    width: 200px;
+    border: 10px solid #3239a0; ;
+    margin-bottom: 100px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  }
+
+  

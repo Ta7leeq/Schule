@@ -13,7 +13,7 @@ Answer the question
 
 <div class="container mt-5">
   <div class="filter-container">
-    <form action="{% url 'exercise_select' Fach="Fach" %}" method="post">
+    <form action="{% url 'exercise_select' grade="Alle" Fach_Name="Alle" Thema_Name="Alle" Exercise_Type_Name="Alle"%}" method="post">
       {% csrf_token %}
     <div class="row g-3">
       <div class="col-md-2">
@@ -26,29 +26,31 @@ Answer the question
       <div class="col-md-2">
         <label for="brand" class="form-label">Fach</label>
         <select id="brand" class="form-select" name="select_fach">
+          
           {%for Fach in Facher%}
-          
+          <option>{{Fach}}</option>
           {%endfor%}
-          <option selected>Alle</option>
-          <option>Deutch</option>
-          <option>Mathe</option>
-          <option>Test</option>
-          
-
         </select>
       </div>
+
       <div class="col-md-2">
         <label for="model" class="form-label">Thema</label>
-        <select id="model" class="form-select">
-          <option selected>Alle</option>
-          <option>Scriftliche Dividierung</option>
+        <select id="model" class="form-select" name="select_thema">
+          
+          {%for thema in Themas%}
+          <option>{{thema}}</option>
+          {%endfor%}
         </select>
       </div>
+
       <div class="col-md-2">
         <label for="year" class="form-label">Übungsart</label>
-        <select id="year" class="form-select">
-          <option selected>Alle</option>
-          <option>Frage_Antwort</option>
+        <select id="year" class="form-select" name="select_exercise_type">
+          
+
+          {%for exercise_type in Exercise_Types%}
+          <option>{{exercise_type}}</option>
+          {%endfor%}
         </select>
       </div>
       
@@ -83,8 +85,10 @@ Answer the question
     {% for exercise in exercises %}
       <div class="col row__image01 ">
         <a class="nav-link active" aria-current="page" href="{% url 'exercise_detail' exercise_id=exercise.id question_id=1 %}">
+          
+          
           <img src="{{ exercise.image.url }}" class="img-fluid" alt="...">
-          <li><a href="{% url 'exercise_detail' exercise_id=exercise.id question_id=1 %}">{{ exercise.name }}</a></li>
+          
           
           
         </a>
