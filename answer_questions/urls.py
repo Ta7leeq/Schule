@@ -13,4 +13,5 @@ urlpatterns = [
     
     path('exercise/<int:exercise_id>/question/<int:question_id>/check/', views.check_answer, name='check_answer'),
 
+    path('exercise/<int:exercise_id>/exercise_complete', views.exercise_complete, name='exercise_complete'),
 ]

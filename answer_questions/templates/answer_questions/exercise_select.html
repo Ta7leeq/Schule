@@ -11,48 +11,61 @@ Answer the question
 
 {% block content %}
 
+
+
 <div class="container mt-5">
   <div class="filter-container">
+
+    <div class="cover_container">
+      
+    </div>
+
+    
     <form action="{% url 'exercise_select' grade="Alle" Fach_Name="Alle" Thema_Name="Alle" Exercise_Type_Name="Alle"%}" method="post">
       {% csrf_token %}
-    <div class="row g-3">
-      <div class="col-md-2">
-        <label for="brand" class="form-label">Klasse</label>
-        <select id="brand" class="form-select">
-          <option selected>Alle</option>
-          <option>04</option>
-        </select>
-      </div>
-      <div class="col-md-2">
-        <label for="brand" class="form-label">Fach</label>
-        <select id="brand" class="form-select" name="select_fach">
-          
-          {%for Fach in Facher%}
-          <option>{{Fach}}</option>
-          {%endfor%}
-        </select>
-      </div>
+    
+      <div class="row g-3">
 
-      <div class="col-md-2">
-        <label for="model" class="form-label">Thema</label>
-        <select id="model" class="form-select" name="select_thema">
-          
-          {%for thema in Themas%}
-          <option>{{thema}}</option>
-          {%endfor%}
-        </select>
-      </div>
+        <div class="col-md-2">   
 
-      <div class="col-md-2">
-        <label for="year" class="form-label">Übungsart</label>
-        <select id="year" class="form-select" name="select_exercise_type">
-          
+          <label for="brand" class="form-label">Klasse</label>
+          <select id="brand" class="form-select">
+            <option selected>Alle</option>
+            <option>04</option>
+          </select>
 
-          {%for exercise_type in Exercise_Types%}
-          <option>{{exercise_type}}</option>
-          {%endfor%}
-        </select>
-      </div>
+        </div>
+      
+        <div class="col-md-2">
+          <label for="brand" class="form-label">Fach</label>
+          <select id="brand" class="form-select" name="select_fach">
+            
+            {%for Fach in Facher%}
+            <option>{{Fach}}</option>
+            {%endfor%}
+          </select>
+        </div>
+
+        <div class="col-md-2">
+          <label for="model" class="form-label">Thema</label>
+          <select id="model" class="form-select" name="select_thema">
+            
+            {%for thema in Themas%}
+            <option>{{thema}}</option>
+            {%endfor%}
+          </select>
+        </div>
+
+        <div class="col-md-2">
+          <label for="year" class="form-label">Übungsart</label>
+          <select id="year" class="form-select" name="select_exercise_type">
+            
+
+            {%for exercise_type in Exercise_Types%}
+            <option>{{exercise_type}}</option>
+            {%endfor%}
+          </select>
+        </div>
       
       <div class="col-md-2 d-flex align-items-end">
         <div class="form-check form-check-inline">
@@ -88,8 +101,6 @@ Answer the question
           
           
           <img src="{{ exercise.image.url }}" class="img-fluid" alt="...">
-          
-          
           
         </a>
       </div>

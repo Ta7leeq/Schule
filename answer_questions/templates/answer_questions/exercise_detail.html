@@ -12,6 +12,8 @@ Answer the question
 
 {% block content %}
 
+
+
 <div class="container-xxl mt-5">
     
     <h1 > {{ exercise.name }} </h1>
@@ -19,18 +21,47 @@ Answer the question
 
 </div>
 
-<div class="container">
+
     <div class="custom-jumbotron mt-5">
       
       <p class="lead fw-bold fs-4">{{ question.text }}</p>
       <hr class="my-4">
-      <form action="{% url 'check_answer' exercise_id=exercise.id question_id=question.question_number %}" method="post">
+      <form action="{% url 'exercise_detail' exercise_id=exercise.id question_id=question.question_number %}" method="post">
         {% csrf_token %}
         <div class="form-group">
           <label for="answer" class="form-label fs-4 fw-bold">Your Answer:</label>
-          <input type="text" class="form-control w-50 fw-bold fs-4" id="answer" name="answer">
+          <div class="container text-center">
+            
+            <div class="row  row-cols-2">
+              
+              <div class="col col-md-9">
+                <input type="text" class="form-control w-60 fw-bold fs-4" id="answer" name="answer">
+              </div>
+               
+              <div class="col col-md-3">
+                <button class="btn btn-candyland_03 ">show answer</button>
+              </div>
+              
+              
+            </div>  
+          </div>
         </div>
-        <button type="submit" class="btn btn-candyland mt-3">Submit Answer</button>
+        <div  class="container text-center" >
+          <div class="row  row-cols-4">
+            <div class="col">
+              <button name="button" value="back" type="submit" class="btn btn-candyland mt-4 col-md-8">Back</button>
+              
+            </div>
+            <div class="col"></div>
+            <div class="col"></div>
+              
+            <div class="col">
+             
+              <button name="button" value="next" type="submit" class="btn btn-candyland_02 mt-4 col-md-8">Next</button>
+            </div>
+          
+          
+       </div>
       </form>
     </div>
   </div>

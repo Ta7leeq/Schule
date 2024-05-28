@@ -25,10 +25,24 @@ body{
 }
 
 /* Aqua Blue Button */
-.btn-candyland {
-  background-color: #00FFFF; /* Aqua Blue */
-  border-color: #00FFFF; /* Matching border color */
+.btn-candyland ,.btn-candyland_02,.btn-candyland_03{
+  background-color: #5d91d4; /* Aqua Blue */
+  border-color: #465f5f; /* Matching border color */
   color: #FFFFFF; /* White text color */
+  height: 50px;
+  padding-top: 10px;
+}
+.btn-candyland_02
+{
+  background-color: #00FFFF; /* Aqua Blue */
+  padding-top: 10px;
+}
+
+.btn-candyland_03
+{
+  background-color: #270222;
+  padding-top: 0px;
+  display: none;
 }
 
 h1,h3{

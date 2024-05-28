@@ -64,34 +64,102 @@ def exercise_select(request,grade,Fach_Name,Thema_Name,Exercise_Type_Name):
 def exercise_detail(request, exercise_id, question_id):
     exercise = Exercise.objects.get(id=exercise_id)
     question = Question.objects.get(question_number=question_id,exercise_id=exercise_id)
+        
     
+    if request.method == 'POST':
+        try:
+            user_answer = request.POST.get('answer')
+            question = Question.objects.get(question_number=question_id,exercise_id=exercise_id)
+            question.user_anwer=user_answer
+            question.save()
+        except Question.DoesNotExist:
+            return redirect('index')  # Redirect to the exercise list if the question does not exist
+        
+        if request.POST.get('button')=="back":
+            if question_id>1:
+                return redirect('exercise_detail',exercise_id=exercise_id,question_id=question_id-1)
+ 
+        elif request.POST.get('button')=="next":
+            last_question_Number=Question.objects.filter(exercise_id=exercise_id).count()
+            
+            if question_id<last_question_Number:
+                return redirect('exercise_detail', exercise_id=exercise_id, question_id=question.question_number+1)
+                
+            else:
+                return redirect('exercise_complete',exercise_id=exercise_id)
+            
+                
     return render(request, 'answer_questions/exercise_detail.html', {'exercise': exercise, 
                                                                      'question': question,
                                                                      'question_id':question_id, 
-                                                                     'exercise_id':exercise_id
+                                                                     'exercise_id':exercise_id,
+                                                                     
                                                                      })
 
 def check_answer(request, exercise_id, question_id):
+    
     if request.method == 'POST':
         user_answer = request.POST.get('answer')
+        
+        
+        print("value")
         try:
             question = Question.objects.get(question_number=question_id,exercise_id=exercise_id)
+            question.user_anwer=user_answer
+            question.save()
         except Question.DoesNotExist:
             return redirect('index')  # Redirect to the exercise list if the question does not exist
 
-        if user_answer == question.correct_answer:
-            last_question_Number=Question.objects.filter(exercise_id=exercise_id).count()
-            print(question.question_number,last_question_Number)
-
-            if question.question_number<last_question_Number:
-                return redirect('exercise_detail', exercise_id=exercise_id, question_id=question.question_number+1)
-            else:
-                
-                return HttpResponse("Exercise complete")
-                
+        
+        last_question_Number=Question.objects.filter(exercise_id=exercise_id).count()
+        
+    
+        if question.question_number<last_question_Number:
+            #return redirect('exercise_detail', exercise_id=exercise_id, question_id=question.question_number+1)
+            print("next")
         else:
-            # Handle incorrect answer
-            
-            return redirect('exercise_detail', exercise_id=exercise_id, question_id=question.question_number)
+            return redirect('exercise_complete',exercise_id=9)
+                
+                
+        
             
 
+def exercise_complete(request,exercise_id):
+    
+    if request.method=='POST':
+        pass
+        
+    questions = Question.objects.filter(exercise=exercise_id)
+    
+    voll_mark=len(questions)
+    
+    score=0
+    for question in questions:
+        
+        if question.user_anwer==question.correct_answer:
+            score=score+1
+
+    percent=(score/voll_mark)*100
+    comment=comment_score(percent)
+    print(percent,comment)
+
+    return render (request, 'answer_questions/exercise_complete.html',
+                {'questions':questions,
+                    'score':score,
+                    'voll_mark':voll_mark,
+                    'percent':percent,
+                    'comment':comment},
+                    )
+
+
+def comment_score(percent):
+    if 0 <= percent < 50:
+        return "You need to improve."
+    elif 50 <= percent < 70:
+        return "Good job, keep practicing!"
+    elif 70 <= percent < 90:
+        return "Great work!"
+    elif 90 <= percent <= 100:
+        return "Excellent!"
+    else:
+        return "Invalid score."

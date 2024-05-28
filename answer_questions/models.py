@@ -40,6 +40,7 @@ class Question(models.Model):
     text = models.TextField()
     correct_answer = models.CharField(max_length=100)
     question_number = models.IntegerField(null=True, blank=True)  # New field to hold the question number
+    user_anwer=models.CharField(null=True,blank=True,max_length=400)
 
     def __str__(self):
-        return self.text
+        return f"{self.text}, {self.exercise}"

@@ -24,7 +24,7 @@ admin.site.register(Thema, themaAdmin)
 
 class excerciseAdmin (admin.ModelAdmin):
     
-    list_display=("name",)
+    list_display=("name","pk")
     
 admin.site.register(Exercise, excerciseAdmin)
 

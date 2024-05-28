@@ -11,49 +11,58 @@ Answer the question
 
 {% block content %}
 
-<div class="container-fluid text-center">
-    <div class="row " >
-      
-      <div class="col row__image01 ">
-        <a class="nav-link active" aria-current="page" href="{% url 'index'%}">
-          <img src="{% static "answer_questions/images/image01.png" %}" class="img-fluid" alt="...">
-        </a>
-      </div>
-      <div class="col row__image02 ">
-        <a class="nav-link active" aria-current="page" href="{% url 'exercise_select' grade="Alle" Fach_Name="Alle" Thema_Name="Alle" Exercise_Type_Name="Alle"%}">
-          <img src="{% static "answer_questions/images/image02.png" %}" class="img-fluid" alt="...">
-        </a>
-      </div>
-      <div class="col row__image03 ">
-        <a class="nav-link active" aria-current="page" href="{% url 'index'%}">
-          <img src="{% static "answer_questions/images/image03.png" %}" class="img-fluid" alt="...">
-        </a>
-      </div>
-      
-    </div>
-  </div>
-  <div class="container-fluid_03 text-center" >
-    <li >
-        <a class="nav-link active" aria-current="page" href="{% url 'index'%}">Accessabilty</a>
-        
-    </li>
-    <li > <a class="nav-link active" aria-current="page" href="{% url 'index'%}">About</a></li>
-    <li > <a class="nav-link active" aria-current="page" href="{% url 'index'%}">Help</a></li>
-    <li > <a class="nav-link active" aria-current="page" href="{% url 'index'%}">Contact</a></li>
-    <li > <a class="nav-link active" aria-current="page" href="{% url 'index'%}">Terms</a></li>
-    <li > <a class="nav-link active" aria-current="page" href="{% url 'index'%}">Privacy</a></li>
-
+<div class="background-container">
+  <div class="positioned-element">
+    <a class="nav-link active" aria-current="page" href="{% url 'exercise_select' grade="Alle" Fach_Name="Alle" Thema_Name="Alle" Exercise_Type_Name="Alle"%}">
+      Glucksschule
+    </a>
   </div>
 
-  <div class="container-fluid_02 text-center">
-    <h2>
-        Learn with having fun!
-    </h2>
-    <p class="paragraph_01">
-        {% lorem 5 b random %}
+  <div class="button-start">
+    <button class="styled-button_start">Start Now!</button>
+  </div>
+
+
+  <div class="button-container">
+    <button class="styled-button_01">Our Story</button>
+    <button class="styled-button_02">Contact us</button>
+  </div>
+
+  <div class="introduction">
+    <p>
+      Unsere E-Learning-Website für Kinder macht Lernen zu einem aufregenden Abenteuer! Mit interaktiven Spielen, farbenfrohen Animationen und spannenden Aktivitäten wird jedes Kind mit Freude und Begeisterung lernen.
     </p>
+
   </div>
   
+<div class="container-fluid text-center">
+  <div class="row " >
+    
+    <div class="col row__image01 ">
+      <a class="nav-link active" aria-current="page" href="{% url 'index'%}">
+        <img src="{% static "answer_questions/images/image01.png" %}" class="img-fluid" alt="...">
+      </a>
+    </div>
+    <div class="col row__image02 ">
+      <a class="nav-link active" aria-current="page" href="{% url 'exercise_select' grade="Alle" Fach_Name="Alle" Thema_Name="Alle" Exercise_Type_Name="Alle"%}">
+        <img src="{% static "answer_questions/images/image02.png" %}" class="img-fluid" alt="...">
+      </a>
+    </div>
+    <div class="col row__image03 ">
+      <a class="nav-link active" aria-current="page" href="{% url 'index'%}">
+        <img src="{% static "answer_questions/images/image03.png" %}" class="img-fluid" alt="...">
+      </a>
+    </div>
+    
+  </div>
+</div>
+ 
+
+</div>
+
+
+
+
    
 
 {% endblock %}
