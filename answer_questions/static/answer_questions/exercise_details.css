@@ -1,0 +1,142 @@
+body{
+  background-color: rgba(199, 234, 228, 0.5);
+}
+
+.container {
+  
+  background-color: #FDF6E4;
+  width: 100%; /* Set the width to 100% of the parent element */
+  max-width: 1300px; /* Optional: set a maximum width */
+}
+
+.sub_container{
+  
+  margin-left: 7%;
+  width: 86%; /* Set the width to 100% of the parent element */
+  max-width: 1400px; /* Optional: set a maximum width */
+
+
+}
+.cover_container {
+  position: relative;
+  width: 100%;
+  height: 230px; /* Cover half of the viewport height */
+  background-image: url('images/exercise_detail_head.JPG'); /* Replace with your image URL */
+  background-size: contain;
+  background-position: top center;
+  
+  background-repeat: no-repeat;
+  
+  
+ }
+
+
+
+.custom-jumbotron {
+  
+  
+  background-color: #F4B400;
+  border-radius: 10px; /* Rounded corners */
+  padding: 2rem; /* Padding */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Add shadow */
+}
+
+
+.custom-jumbotron .lead {
+  background-color: #F47746; 
+  border-radius: 20px; /* Rounded corners */
+  color: #343a40; /* Dark text color */
+  font-size: large;
+  font-family: "Poetsen One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  padding: 40px;
+  
+  
+  
+}
+
+.question_head{
+  
+  
+  color: #343a40; /* Dark text color */
+  font-family: "REM", sans-serif;
+  font-optical-sizing: auto;
+  font-weight:10px;
+  font-style: normal;
+  padding: 20px;
+  
+  
+  
+}
+.custom-jumbotron hr {
+  border-top-color: #343a40; /* Dark color for horizontal rule */
+}
+.custom-jumbotron label {
+  font-size: 18px; /* Custom font size */
+}
+.custom-jumbotron .form-control {
+  font-size: 18px; /* Custom font size */
+  background-color:#E6E6FA ;
+  
+  
+}
+
+.form-group{
+  padding: 10px 15px;
+  background-color: #76C7C0;
+  border-radius: 20px; /* Rounded corners */
+
+}
+.input_show{
+  display: inline-block;
+  padding: 20px;
+}
+
+.input_jumbo{
+  margin-right: 200px;
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  width: 600px;
+  border-radius: 25px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  font-size: 16px;
+  transition: box-shadow 0.3s ease-in-out;
+
+  /* Optional: Adding some nice focus effect */
+  outline: none;
+}
+
+
+
+
+.btn-candyland_01
+{
+  background-color: #4f5a5c; /* Aqua Blue */
+  padding-top: 0px;
+  height: 50px;
+  color: #0c0c0c; /* White text color */
+}
+
+.btn-candyland_02
+{
+  background-color: #005766; /* Aqua Blue */
+  padding-top: 0px;
+  height: 50px;
+  color: #FFFFFF; /* White text color */
+}
+
+.btn-candyland_03
+{
+  background-color: #00A388; /* Aqua Blue */
+  padding-top: 0px;
+  height: 50px;
+  color: #F4B400; /* White text color */
+  border: none;
+  border-radius: 10px;
+}
+
+h1,h3{
+
+  color:#2F4F4F;
+}

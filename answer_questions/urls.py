@@ -15,3 +15,4 @@ urlpatterns = [
 
     path('exercise/<int:exercise_id>/exercise_complete', views.exercise_complete, name='exercise_complete'),
 ]
+

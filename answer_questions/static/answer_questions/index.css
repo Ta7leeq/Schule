@@ -17,6 +17,7 @@ body{
     background-repeat: no-repeat; /* Do not repeat the image */
 }
 
+
 .positioned-element {
     position: absolute;
     top: 26%; /* 50% from the top */

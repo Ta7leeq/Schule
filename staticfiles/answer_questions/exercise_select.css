@@ -1,0 +1,118 @@
+body {
+    background-color: rgba(199, 234, 228, 0.5);
+    color: #ffffff;
+    
+    
+  }
+
+.filter-container {
+  
+  padding-top: none;
+  margin-top: none;
+  
+}
+
+.container{
+  
+  background-color: rgba(127, 198, 182, 0.5);
+  width: 100%; /* Set the width to 100% of the parent element */
+  max-width: 1700px; /* Optional: set a maximum width */
+  
+}
+
+.col-md-2{
+  
+  margin: 0 auto;
+  margin-top: 60px;
+  
+}
+.cover_container {
+  position: relative;
+  width: 100%;
+  height: 330px; /* Cover half of the viewport height */
+  background-image: url('images/exercise_select.png'); /* Replace with your image URL */
+  background-size: contain;
+  background-position: center;
+  
+  background-repeat: no-repeat;
+  
+  margin-bottom: 20px;
+}
+
+
+.filter-container {
+  background-color: rgba(127, 198, 182, 0.5)13185e;
+  border-radius: 8px;  
+}
+
+.filter-container .form-control, .filter-container .btn, .filter-container .form-select {
+    margin-top: 10px;
+    width: 250px;
+    height: 60px;
+    text-align: center;
+    background: linear-gradient(to bottom, #66ccff, #0066cc);
+    border: 8px solid ;
+    border-color:#b33900 ;
+    border-radius: 30px;
+    background: white;
+    color:#6c757d;
+    font-size: large;
+    font-family: "Poetsen One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    
+
+}
+
+.form-label{
+  width: 250px;
+  text-align: center;
+  
+  background: linear-gradient(to bottom, #70ceb8, #70ceb8);
+    border: none;
+    border-radius: 30px;
+    color: #3239a0;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 20px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: large;
+    font-family: "Poetsen One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.);
+    
+
+
+}
+
+.btn01{
+  background: linear-gradient(to bottom, #66ccff, #0066cc);
+  width: 250px;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 20px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.img-fluid{
+  height: 200px;
+  width: 200px;
+  
+  border: 10px solid #D3D3D3; ;
+  
+  margin-top: 100px;
+  margin-bottom: 10px;
+  
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+

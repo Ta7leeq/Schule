@@ -13,12 +13,12 @@ Answer the question
 
 
 
-<div class="container mt-5">
+<div class="container">
   <div class="filter-container">
 
     <div class="cover_container">
       
-    </div>
+  </div>
 
     
     <form action="{% url 'exercise_select' grade="Alle" Fach_Name="Alle" Thema_Name="Alle" Exercise_Type_Name="Alle"%}" method="post">
@@ -67,23 +67,13 @@ Answer the question
           </select>
         </div>
       
-      <div class="col-md-2 d-flex align-items-end">
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="onlinePurchase" value="option1">
-          <label class="form-check-label" for="onlinePurchase">neu!</label>
-        </div>
-      </div>
-      <div class="col-md-2 d-flex align-items-end">
-        
-      </div>
-      <div class="col-md-2 d-flex align-items-end">
-        <button type="button" class="btn btn-secondary w-100">Zurücksetzen</button>
-      </div>
+      
+      
       
       <div class="col-md-2 d-flex align-items-end">
       
         
-          <button type="submit" class="btn btn-primary w-100">Filter</button>
+          <button class= "btn01" type="submit">Filter</button>
         
       
       </div>
@@ -94,7 +84,7 @@ Answer the question
 
 <div class="container text-center">
   
-  <div class="row row-cols-4 " >
+  <div class="row row-cols-6 " >
     {% for exercise in exercises %}
       <div class="col row__image01 ">
         <a class="nav-link active" aria-current="page" href="{% url 'exercise_detail' exercise_id=exercise.id question_id=1 %}">

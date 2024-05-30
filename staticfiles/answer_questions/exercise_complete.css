@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+.container {
+
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 100px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.header h1 {
+    color: #4CAF50;
+}
+.score-summary {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.score-summary .score {
+    font-size: 2em;
+    color: #4CAF50;
+}
+.questions-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+.questions-table th, .questions-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+.questions-table th {
+    background-color: #f2f2f2;
+    text-align: left;
+}
+.questions-table .incorrect {
+    text-align: center;
+    color: red;
+}
+.questions-table .correct {
+    text-align: center;
+    color: green;
+}
+.questions-table .table_text_centered {
+    text-align: center;
+    
+}
+.statistics {
+    margin-bottom: 20px;
+}
+.footer {
+    text-align: center;
+}
+.footer button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+}
+.footer button:hover {
+    background-color: #45a049;
+}

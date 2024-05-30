@@ -1,0 +1,220 @@
+body{
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+    }
+}
+
+.background-container {
+    margin-top: 10px;
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full height of the viewport */
+    background-image: url('images/backgrround.png');
+    background-size: cover; /* Cover the entire container */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+}
+
+
+.positioned-element {
+    position: absolute;
+    top: 26%; /* 50% from the top */
+    left: 50%; /* 50% from the left */
+    transform: translate(-50%, -50%); /* Center the element */
+    font-size: 70px;
+    font-family: "Poetsen One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    text-shadow: 0 0 10px rgba(252, 5, 5, 0.7), /* Green glow */
+                         0 0 20px rgba(252, 5, 5, 0.6),
+                         0 0 30px rgba(252, 5, 5, 0.5);
+    
+    
+    
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.styled-button_01 {
+    position: absolute;
+    top: 54%; /* 50% from the top */
+    left: 31.5%; /* 50% from the left */
+    transform: translate(-50%, -50%); /* Center the element */
+    
+    width: 200%; /* Make the button take the full width of its container */
+    max-width: 450px; /* Set a maximum width */
+    box-sizing: border-box;
+
+    background: linear-gradient(to bottom, #ffeb3b, #ffc107);
+    border: none;
+    color: #d32f2f;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-family: "Poetsen One", sans-serif;
+    font-weight: bold;
+}
+
+
+.styled-button_02 {
+    position: absolute;
+    top: 54%; /* 50% from the top */
+    left: 52%; /* 50% from the left */
+    transform: translate(-50%, -50%); /* Center the element */
+    
+    width: 150%; /* Make the button take the full width of its container */
+    max-width: 280px; /* Set a maximum width */
+    box-sizing: border-box;
+
+    background: linear-gradient(to bottom, #ffeb3b, #ffc107);
+    border: none;
+    color: #d32f2f;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-family: "Poetsen One", sans-serif;
+    font-weight: bold;
+}
+
+
+.styled-button_start {
+    position: absolute;
+    top: 46%; /* 50% from the top */
+    left: 50%; /* 50% from the left */
+    transform: translate(-50%, -50%); /* Center the element */
+    
+    width: 150%; /* Make the button take the full width of its container */
+    height: 75px;
+    max-width: 450px; /* Set a maximum width */
+    box-sizing: border-box;
+
+    background: linear-gradient(to bottom, #069488, #08ebd8e0);
+    border: none;
+    color: #d32f2f;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 32px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-family: "Poetsen One", sans-serif;
+    font-weight: bold;
+}
+.styled-button:hover {
+    background: linear-gradient(to bottom, #ffc107, #ffeb3b);
+}
+
+.custom-height {
+    height: 600px; /* Set the desired height */
+  }
+  
+.img-fluid{
+    height: 330px;
+    
+}
+
+.introduction
+{
+    position: absolute;
+    top: 38%; /* 50% from the top */
+    left: 50%; /* 50% from the left */
+    transform: translate(-50%, -50%); /* Center the element */
+    font-size: 18px;
+    font-family: "Poetsen One", sans-serif;
+    font-weight: 400;
+    color: rgb(14, 13, 13);
+    font-style: normal;
+}
+.row{
+    position: absolute;
+    top: 75%; /* 50% from the top */
+    left: 52%; /* 50% from the left */
+    transform: translate(-50%, -50%); /* Center the element */
+    
+    
+    
+
+
+}
+.row__image01{
+    
+    height: 500px;
+    width: 500px;
+    
+
+}
+
+.row__image03{
+    
+    height: 500px;
+    width: 500px;
+
+}
+
+.row__image02{
+    height: 500px;
+    width: 500px;
+  
+}
+
+.row__image01,.row__image03, .row__image02{
+    padding-top: 100px;
+}
+
+.container-fluid_02{
+    background-color: #80ff00cb;
+    
+}
+
+.paragraph_01{
+    padding-left: 20%;
+    padding-right: 20%;
+    
+    text-align: left;
+    
+}
+
+.container-fluid_03 {
+    background-color:  #22d412cb;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    
+    
+}
+.container-fluid_03 li {
+    padding: 10px 15px;
+    color: blue;
+    font-weight: bold;
+    display: none;
+}
