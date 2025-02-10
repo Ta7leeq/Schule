@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{%load static%}
+
+{%block css_files%}
+    <link rel="stylesheet" href ="{%static style %}">
+{%endblock%}
+
+{%block page_title%}
+Game-Penguin
+{%endblock%}
+
+{% block content %}
+
+  <head>
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Guess My Number!</title>
+    <link rel="stylesheet" href="{% static 'path/to/your/style.css' %}">
+  
+  
+    
+  </head>
+  <body>
+    <header>
+      <h1>Rechnen Challenge!</h1>
+      <p class="between">(Bears)</p>
+      
+      <form action="{% url 'start' %}" method="post">
+        {% csrf_token %}
+        <button class="btn again" id="C">Start!</button>
+      </form>
+
+      <div class="number">?</div>
+    </header>
+    <main>
+  
+      <form action="{% url 'checkPenguin' %}" method="post">
+        <div class="product-container">
+          <!-- Input fields within the penguin image go here -->
+          <input class="L1" type="text" name="L1" value={{equation.num1}}>
+          <input class="R1" type="text" name="R1" >
+          <input class="L2" type="text" name="L2">
+          <input class="R2" type="text" name="R2" value={{equation.num2_multiplied}}>
+          <input class="L3" type="text" name="L3" value={{equation.sum}}>
+          <input class="R3" type="text" name="R3">
+          <input class="M" type="text" name="M" value={{equation.factor}}>
+        </div>
+      
+      <div class="footer">
+        
+          {% csrf_token %}
+          {% if check %}
+            <button class="check" >Check!</button>
+          {% else %}
+            <button class="check" onclick="return confirmDelete();" >Check!</button>
+          {% endif %}
+
+          
+        </form>
+      </div>
+
+      <section class="right">
+        <p class="message">Wer Spielt?</p>
+    <form action="/Bear_Name" method="POST" >
+
+          <input class="name" type="text"   name="name"   >
+          
+          
+      </form>  
+       
+        <p class="label-score"> 💲 Count: <span class="zahl">0</span></p>
+        <p class="label-score">💯 Score: <span class="score">0</span></p>
+        <p class="label-score">
+          🥇 Highscore: <span class="highscore">0</span>
+        </p>
+        <p class="label-score">⏰ Task Time: <span class="time">0</span> Sec</p>
+        <p class="label-score">  Total Time: <span class="totalTime">0</span> Sec</p>
+        
+      </section>
+    
+      
+
+    
+    </main>
+    
+    
+   
+    {{check}}
+  </body>
+</html>
+
+<script>
+  function confirmDelete() {
+      return confirm("Are you sure you want to delete this item?");
+  }
+</script>
+{%endblock%}

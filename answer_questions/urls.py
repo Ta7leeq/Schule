@@ -7,6 +7,8 @@ urlpatterns = [
 
     path('exercise_select/<str:grade>/<str:Fach_Name>/<str:Thema_Name>/<str:Exercise_Type_Name>', views.exercise_select, name='exercise_select'),
     
+    path('memorize', views.memorize, name='memorize'),
+
     path('exercise/<int:exercise_id>/question/<int:question_id>/', views.exercise_detail, name='exercise_detail'),
 
 
@@ -14,5 +16,6 @@ urlpatterns = [
     path('exercise/<int:exercise_id>/question/<int:question_id>/check/', views.check_answer, name='check_answer'),
 
     path('exercise/<int:exercise_id>/exercise_complete', views.exercise_complete, name='exercise_complete'),
+    path('exercise/<int:exercise_id>/fill_the_gaps_complete', views.fill_the_gaps_complete, name='fill_the_gaps_complete'),
 ]
 

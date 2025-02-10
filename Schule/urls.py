@@ -22,7 +22,12 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('fill_the_gaps/', include('fill_the_gaps.urls')),
+    #path('fill_the_gaps/', include('fill_the_gaps.urls')),
     path('', include('answer_questions.urls')),
+    path('accounts/', include('accounts.urls')),
+    path('users/', include('users.urls')),
+    path('memory/', include('memory.urls')),
+    path('penguin/', include('penguin.urls')),
+
     ]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
 static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)

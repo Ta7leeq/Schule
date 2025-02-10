@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'answer_questions/exercise_details.css' %}">
+{% endblock %}
+
+{% block page_title %}
+    Answer the question
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="sub_container">
+        <div class="cover_container"></div>
+
+        <div class="custom-jumbotron mt-5">
+            <!-- Exercise Title -->
+            <h3 class="question_head">{{ exercise.head }}</h3>
+            <form action="{% url 'exercise_detail' exercise_id=exercise.id question_id=question.question_number %}" method="post">
+                {% csrf_token %}
+                <!-- Question Text -->
+                <p class="lead fw-bold fs-4">
+                    <!-- Split the question's text into words and replace the word at the position given by `correct_answer` with an input field -->
+                    {% with question.text.split as words %}
+                        {% for word in words %}
+                            {% if forloop.counter == question.correct_answer|add:0 %}
+                                <!-- Input field with appropriate spacing -->
+                                <input class="input_jumbo" type="text" id="answer" name="answer" >
+                            {% else %}
+                                {{ word }}{% if not forloop.last %}&nbsp;{% endif %}
+                            {% endif %}
+                        {% endfor %}
+                    {% endwith %}
+                </p>
+            
+            <hr class="my-4">
+
+            <!-- Form to submit the answer -->
+            
+                </div>
+
+                <!-- Navigation Buttons -->
+                <div class="container_02 text-center">
+                    <div class="row row-cols-4">
+                        <div class="col">
+                            <button name="button" value="back" type="submit" class="btn btn-candyland_01 mt-4 col-md-8">Back</button>
+                        </div>
+                        <div class="col"></div>
+                        <div class="col"></div>
+                        <div class="col">
+                            <button name="button" value="next" type="submit" class="btn btn-candyland_02 mt-4 col-md-8">Next</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

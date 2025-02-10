@@ -25,26 +25,31 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-+061@c^igodz0%9#k*=c(@(hx_3!3=++&vujtvgk73%b%jvso$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = getenv("IS_DEVELOPMENT",True)
+#DEBUG = getenv("IS_DEVELOPMENT",True)
+#DEBUG = getenv("IS_DEVELOPMENT",False)
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
 
-ALLOWED_HOSTS = [
-'127.0.0.1',
-getenv("APP_HOST"),
-
-]
-
+#ALLOWED_HOSTS = ['127.0.0.1',getenv("APP_HOST"),]
+#ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = []
 
 # Application definition
 
 INSTALLED_APPS = [
-    'fill_the_gaps',
+    #'fill_the_gaps',
+    'penguin',
+    'memory',
     'answer_questions',
+    'accounts',
+    'users',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [

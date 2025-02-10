@@ -140,3 +140,13 @@ h1,h3{
 
   color:#2F4F4F;
 }
+
+.input_jumbo {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+  margin: 0 5px; /* Small margin on both sides */
+  width: 120px; /* Width for approx 10 characters */
+}

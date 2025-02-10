@@ -1,0 +1,69 @@
+
+
+{% extends "base.html" %}
+{%load static%}
+{% load custom_filters %}
+{%block css_files%}
+    <link rel="stylesheet" href ="{%static "answer_questions/exercise_complete.css" %}"-->
+{%endblock%}
+
+{%block page_title%}
+Exercise completed!
+{%endblock%}
+
+{% block content %}
+<div class="container">
+  <div class="header">
+      <h1>Exercise Complete!</h1>
+      <h3>Great job on completing the quiz!</h3>
+  </div>
+  <div class="score-summary">
+      <p class="score">Score: {{score}}/{{voll_mark}}</p>
+      <p>{{comment}}!</p>
+  </div>
+  
+  <table class="questions-table">
+      <tr >
+          <th >Question</th>
+          <th class="table_text_centered">Given Answer</th>
+          <th class="table_text_centered">Correct Answer</th>
+      </tr>
+      {%for question in questions%}
+        
+        {% if question.user_anwer == question.text|get_word_at_position:question.correct_answer %}
+          <tr>
+            <td>{{ question.text|get_sentence_with_blank:question.correct_answer }}</td>
+            <td class="correct">{{question.user_anwer}} </td>
+            <td class="table_text_centered">{{question.text|get_word_at_position:question.correct_answer}}</td>
+          </tr>
+        {% else %}
+          <tr>
+            <td>{{ question.text|get_sentence_with_blank:question.correct_answer }}</td>
+            <td class="incorrect">{{question.user_anwer}} ❌</td>
+            <td class="table_text_centered">{{question.text|get_word_at_position:question.correct_answer}}</td>
+          </tr>
+        {% endif %}
+      
+      {% endfor %}
+      <!-- Add more rows as needed -->
+  </table>
+  <div class="statistics">
+      <p>Time Taken: 5 minutes</p>
+      <p>Accuracy: {{percent}}%</p>
+      
+      <p>Stars Earned: ★★★</p>
+  </div>
+  
+    <div class="footer">
+      <form action="{% url 'index' %}" method="post">
+        {% csrf_token %}
+        <button onclick="retryQuiz()" method="post">Retry Quiz</button>
+        <button onclick="nextExercise()">Next Exercise</button>
+        <button onclick="reviewAnswers()">Review Answers</button>
+      </form>
+    </div>
+  
+</div>
+  
+
+{%endblock%}
